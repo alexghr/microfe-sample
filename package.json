@@ -1,0 +1,12 @@
+{
+  "name": "@alexghr/mfe-ws",
+  "private": "true",
+  "workspaces": [
+    "packages/*"
+  ],
+  "version": "0.1.0",
+  "main": "index.js",
+  "repository": "git@github.com:alexghr/microfe-sample.git",
+  "author": "Alex Gherghisan <alexghr@users.noreply.github.com>",
+  "license": "MIT"
+}
