@@ -8,5 +8,15 @@
   "main": "index.js",
   "repository": "git@github.com:alexghr/microfe-sample.git",
   "author": "Alex Gherghisan <alexghr@users.noreply.github.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "scripts": {
+    "build": "lerna run build",
+    "clean": "lerna run clean",
+    "predev": "$npm_execpath run build",
+    "dev": "node -r dotenv/config packages/server"
+  },
+  "devDependencies": {
+    "dotenv": "^8.2.0",
+    "lerna": "^3.22.1"
+  }
 }
