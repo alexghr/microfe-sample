@@ -2,7 +2,6 @@
   "name": "@alexghr/mfe-dashboard",
   "version": "0.1.0",
   "main": "./out",
-  "license": "./LICENSE",
   "scripts": {
     "build": "tsc -b .",
     "clean": "tsc -b --clean .",

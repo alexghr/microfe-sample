@@ -1,7 +1,6 @@
 {
   "name": "@alexghr/mfe-server",
   "version": "0.1.0",
-  "license": "./LICENSE",
   "main": "./out/bin/start-server.js",
   "bin": {
     "start-server": "out/bin/start-server.js"
