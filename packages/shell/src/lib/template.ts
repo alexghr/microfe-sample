@@ -2,12 +2,14 @@ type TemplateOptions = {
   app: string;
   body: string;
   style: string;
+  env: object
 }
 
 export default function render({
   app,
   body,
-  style
+  style,
+  env
 }: TemplateOptions) {
   return /* html */`
 <!doctype html>
@@ -15,6 +17,7 @@ export default function render({
   <head>
     <meta charset="utf-8">
     ${style}
+    <script>window.env=JSON.parse('${JSON.stringify(env)}');</script>
   </head>
   <body>
     <div id="root">${body}</div>

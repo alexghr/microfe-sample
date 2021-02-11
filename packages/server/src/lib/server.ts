@@ -17,7 +17,7 @@ export default async function createServer() {
   });
 
   server.use(serveStatic(staticDir));
-  server.use(ktx => ktx.body = render());
+  server.use(ktx => ktx.body = render({ }));
 
   return () => server.listen(PORT);
 }
