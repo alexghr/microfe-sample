@@ -1,0 +1,19 @@
+{
+  "name": "@alexghr/mfe-common",
+  "version": "0.1.0",
+  "main": "./out",
+  "scripts": {
+    "build": "tsc -b .",
+    "clean": "tsc -b --clean .",
+    "postclean": "rm -rf ./out"
+  },
+  "dependencies": {
+    "react": "^17.0.1",
+    "tslib": "^2.1.0"
+  },
+  "devDependencies": {
+    "@alexghr/ts": "^0.1.0",
+    "@types/react": "^17.0.1",
+    "typescript": "^4.1.3"
+  }
+}
