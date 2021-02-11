@@ -1,6 +1,6 @@
 import Koa from 'koa';
 import serveStatic from 'koa-static';
-import { PORT } from './config';
+import { NEWS_API_TOKEN, PORT } from './config';
 import { render, staticDir } from '@alexghr/mfe-shell';
 
 export default async function createServer() {
@@ -17,7 +17,7 @@ export default async function createServer() {
   });
 
   server.use(serveStatic(staticDir));
-  server.use(ktx => ktx.body = render({ }));
+  server.use(ktx => ktx.body = render({ NEWS_API_TOKEN }));
 
   return () => server.listen(PORT);
 }
