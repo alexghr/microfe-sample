@@ -8,7 +8,7 @@ const Article: React.FC<ArticleModel> = ({
   urlToImage,
   title,
   description,
-  children
+  children,
 }) => (
   <ExternalLink href={url} key={url}>
     <Element>
@@ -29,7 +29,7 @@ const ExternalLink = styled.a`
 `;
 
 const Element = styled.article`
-  position: relative
+  position: relative;
 `;
 
 const Img = styled.img`

@@ -14,12 +14,15 @@ const TopHeadlines: React.FC = () => {
   const resp = useFeed();
   const handlePin = (article: ArticleModel) => {
     const id = JSON.stringify(article);
-    postMessage(JSON.stringify({
-      event: "projects:pin",
-    // we don't have a get-by-id API so simulate everything using serialisation
-      item: { id, type: 'article'}
-    }), origin);
-  }
+    postMessage(
+      JSON.stringify({
+        event: "projects:pin",
+        // we don't have a get-by-id API so simulate everything using serialisation
+        item: { id, type: "article" },
+      }),
+      origin
+    );
+  };
 
   return (
     <Element>
@@ -28,11 +31,16 @@ const TopHeadlines: React.FC = () => {
         <ArticlesGrid>
           {resp.body.articles.map((data) => (
             <Article key={data.url} {...data}>
-              <button onClick={(ev) => {
-                ev.preventDefault();
-                ev.stopPropagation();
-                handlePin(data)
-              }} title="pin to project">📌</button>
+              <button
+                onClick={(ev) => {
+                  ev.preventDefault();
+                  ev.stopPropagation();
+                  handlePin(data);
+                }}
+                title="pin to project"
+              >
+                📌
+              </button>
             </Article>
           ))}
         </ArticlesGrid>

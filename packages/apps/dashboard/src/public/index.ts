@@ -1,2 +1,2 @@
-export * from './ArticleCard';
-export * from './DashboardRoutes';
+export * from "./ArticleCard";
+export * from "./DashboardRoutes";
