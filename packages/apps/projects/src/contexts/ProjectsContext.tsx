@@ -27,12 +27,15 @@ export const ProjectsContextProvider: React.FC = ({ children }) => {
   // poor man's refresh mechanism
   const [refetchProjects, setRefetchProjects] = React.useState(0);
 
-  const addProject = React.useCallback((name) => {
-    return createProject({ name }).then((project) => {
-      setRefetchProjects(refetchProjects + 1);
-      return project;
-    });
-  }, []);
+  const addProject = React.useCallback(
+    (name) => {
+      return createProject({ name }).then((project) => {
+        setRefetchProjects(refetchProjects + 1);
+        return project;
+      });
+    },
+    [refetchProjects]
+  );
 
   React.useEffect(() => {
     setProjects({ loading: true, data: [] });

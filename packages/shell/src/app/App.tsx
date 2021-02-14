@@ -3,18 +3,27 @@ import styled, { createGlobalStyle } from "styled-components";
 import { Route, Switch } from "react-router";
 import { spacing } from "./const";
 import DashboardRoutes from "@alexghr/mfe-app-dashboard";
-import ProjectRoutes from "@alexghr/mfe-app-projects";
+import {
+  ProjectRoutes,
+  ProjectsPanel,
+  ProjectsProvider,
+} from "@alexghr/mfe-app-projects";
 
 const App: React.FC = () => {
   return (
     <>
       <GlobalStyles />
       <Element>
-        <Switch>
-          {/* place /projects first otherwise DashboardRoutes will render for everything */}
-          <Route path="/projects" component={ProjectRoutes} />
-          <Route path="/" component={DashboardRoutes} />
-        </Switch>
+        <ProjectsProvider>
+          <div>
+            <ProjectsPanel />
+          </div>
+          <Switch>
+            {/* place /projects first otherwise DashboardRoutes will render for everything */}
+            <Route path="/projects" component={ProjectRoutes} />
+            <Route path="/" component={DashboardRoutes} />
+          </Switch>
+        </ProjectsProvider>
       </Element>
     </>
   );
