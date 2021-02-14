@@ -4,11 +4,7 @@
     "outDir": "../../out/lib",
     "composite": true,
     "rootDir": "./",
-    "types": [
-      "node"
-    ]
+    "types": ["node"]
   },
-  "include": [
-    "./*"
-  ]
+  "include": ["./*"]
 }

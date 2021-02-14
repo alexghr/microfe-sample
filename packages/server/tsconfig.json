@@ -1,7 +1,5 @@
 {
-  "exclude": [
-    "*"
-  ],
+  "exclude": ["*"],
   "references": [
     {
       "path": "./src/lib"

@@ -1,7 +1,7 @@
-import React from 'react';
-import styled, { createGlobalStyle } from 'styled-components';
-import { spacing } from './const';
-import DashboardRoutes from '@alexghr/mfe-dashboard';
+import React from "react";
+import styled, { createGlobalStyle } from "styled-components";
+import { spacing } from "./const";
+import DashboardRoutes from "@alexghr/mfe-dashboard";
 
 const App: React.FC = () => {
   return (
@@ -12,7 +12,7 @@ const App: React.FC = () => {
       </Element>
     </>
   );
-}
+};
 
 export default App;
 

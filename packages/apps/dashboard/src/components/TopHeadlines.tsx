@@ -1,17 +1,22 @@
-import React from 'react';
-import styled from 'styled-components';
-import { mediaQuery, spacing, LoadingIndicator, Container } from '@alexghr/mfe-common';
-import useFeed from '../hooks/useFeed';
+import React from "react";
+import styled from "styled-components";
+import {
+  mediaQuery,
+  spacing,
+  LoadingIndicator,
+  Container,
+} from "@alexghr/mfe-common";
+import useFeed from "../hooks/useFeed";
 
 const TopHeadlines: React.FC = () => {
   const resp = useFeed();
 
   return (
     <Element>
-      {resp.status === 'loading' && <LoadingIndicator />}
-      {resp.status === 'success' && (
+      {resp.status === "loading" && <LoadingIndicator />}
+      {resp.status === "success" && (
         <ArticleContainer>
-           {resp.body.articles.map(({ url, urlToImage, title, description }) => (
+          {resp.body.articles.map(({ url, urlToImage, title, description }) => (
             <ExternalLink href={url} key={url}>
               <Article>
                 <Img src={urlToImage} />
@@ -22,7 +27,9 @@ const TopHeadlines: React.FC = () => {
           ))}
         </ArticleContainer>
       )}
-      {resp.status === 'error' && <>There was an error loading your news. Try refreshing this page</>}
+      {resp.status === "error" && (
+        <>There was an error loading your news. Try refreshing this page</>
+      )}
     </Element>
   );
 };
@@ -48,7 +55,7 @@ const ArticleContainer = styled.div`
 
   @media ${mediaQuery.tablet} {
     grid-template-columns: repeat(3, 1fr);
-    grid-gap: ${spacing.base}
+    grid-gap: ${spacing.base};
   }
 
   @media ${mediaQuery.phone} {
@@ -63,8 +70,7 @@ const ExternalLink = styled.a`
   cursor: pointer;
 `;
 
-const Article = styled.article`
-`;
+const Article = styled.article``;
 
 const Img = styled.img`
   width: 100%;
@@ -87,5 +93,4 @@ const Title = styled.span`
   text-decoration: underline;
 `;
 
-const Description = styled.p`
-`;
+const Description = styled.p``;

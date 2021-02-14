@@ -4,13 +4,9 @@
     "outDir": "../../out/bin",
     "rootDir": "./",
     "skipLibCheck": true,
-    "types": [
-      "node"
-    ]
+    "types": ["node"]
   },
-  "include": [
-    "./*"
-  ],
+  "include": ["./*"],
   "references": [
     {
       "path": "../lib"

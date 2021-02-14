@@ -3,13 +3,9 @@
   "compilerOptions": {
     "outDir": "../../out/lib",
     "jsx": "react",
-    "types": [
-      "node"
-    ]
+    "types": ["node"]
   },
-  "include": [
-    "*"
-  ],
+  "include": ["*"],
   "references": [
     {
       "path": "../app"

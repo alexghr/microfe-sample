@@ -1,9 +1,9 @@
-import React from 'react';
-import { BrowserRouter } from 'react-router-dom';
-import { hydrate } from 'react-dom';
-import { ConfigContext } from '@alexghr/mfe-common';
+import React from "react";
+import { BrowserRouter } from "react-router-dom";
+import { hydrate } from "react-dom";
+import { ConfigContext } from "@alexghr/mfe-common";
 
-import App from '../app';
+import App from "../app";
 
 declare global {
   var env: Record<string, any> | undefined | null;
@@ -18,7 +18,7 @@ function main() {
         </ConfigContext.Provider>
       </BrowserRouter>
     </>,
-    document.getElementById('root')
+    document.getElementById("root")
   );
 }
 

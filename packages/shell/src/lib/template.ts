@@ -2,16 +2,11 @@ type TemplateOptions = {
   app: string;
   body: string;
   style: string;
-  env: object
-}
+  env: object;
+};
 
-export default function render({
-  app,
-  body,
-  style,
-  env
-}: TemplateOptions) {
-  return /* html */`
+export default function render({ app, body, style, env }: TemplateOptions) {
+  return /* html */ `
 <!doctype html>
 <html>
   <head>
@@ -24,5 +19,5 @@ export default function render({
     <script src="${app}"></script>
   </body>
 </html>
-`
+`;
 }

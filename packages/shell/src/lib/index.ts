@@ -1,2 +1,2 @@
-export * from './ssr';
-export * from './static-files';
+export * from "./ssr";
+export * from "./static-files";

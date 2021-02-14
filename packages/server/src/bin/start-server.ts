@@ -1,3 +1,3 @@
-import createServer from '../lib';
+import createServer from "../lib";
 
-createServer().then(l => l());
+createServer().then((l) => l());
