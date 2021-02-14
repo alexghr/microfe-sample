@@ -1,8 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import LoadingIndicator from './LoadingIndicator';
-import { mediaQuery, spacing } from '../const';
-import { Container } from './Container';
+import { mediaQuery, spacing, LoadingIndicator, Container } from '@alexghr/mfe-common';
 import useFeed from '../hooks/useFeed';
 
 const TopHeadlines: React.FC = () => {

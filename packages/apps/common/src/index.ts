@@ -1,1 +1,3 @@
-export * from './context/Config';
+export * from './components';
+export * from './context';
+export * from './const';
