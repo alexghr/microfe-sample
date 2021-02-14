@@ -7,6 +7,7 @@
   },
   "scripts": {
     "build": "tsc -b .",
+    "build:watch": "tsc -b --watch --preserveWatchOutput .",
     "clean": "tsc -b --clean .",
     "postclean": "rm -rf ./out"
   },

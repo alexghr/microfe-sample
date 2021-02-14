@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { ConfigContext } from "@alexghr/mfe-common";
+import { ConfigContext } from "@alexghr/mfe-app-common";
 import useFetch from "./useFetch";
 import { ArticleModel } from "../models/article";
 

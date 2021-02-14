@@ -5,7 +5,7 @@ import {
   spacing,
   LoadingIndicator,
   Container,
-} from "@alexghr/mfe-common";
+} from "@alexghr/mfe-app-common";
 import useFeed from "../hooks/useFeed";
 import Article from "./Article";
 
@@ -17,7 +17,9 @@ const TopHeadlines: React.FC = () => {
       {resp.status === "loading" && <LoadingIndicator />}
       {resp.status === "success" && (
         <ArticlesGrid>
-          {resp.body.articles.map((data) =>  <Article key={data.url} {...data} />)}
+          {resp.body.articles.map((data) => (
+            <Article key={data.url} {...data} />
+          ))}
         </ArticlesGrid>
       )}
       {resp.status === "error" && (

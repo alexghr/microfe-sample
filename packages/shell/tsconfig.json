@@ -6,6 +6,12 @@
     },
     {
       "path": "./src/app"
+    },
+    {
+      "path": "../apps/common"
+    },
+    {
+      "path": "../apps/dashboard"
     }
   ]
 }

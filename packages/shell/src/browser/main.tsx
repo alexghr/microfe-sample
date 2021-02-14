@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter } from "react-router-dom";
 import { hydrate } from "react-dom";
-import { ConfigContext } from "@alexghr/mfe-common";
+import { ConfigContext } from "@alexghr/mfe-app-common";
 
 import App from "../app";
 

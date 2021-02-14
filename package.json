@@ -12,11 +12,15 @@
   "scripts": {
     "build": "lerna run build",
     "clean": "lerna run clean",
-    "predev": "$npm_execpath run build",
-    "dev": "node -r dotenv/config packages/server"
+    "build:watch": "lerna run build:watch --ignore '@alexghr/mfe-app*' --parallel",
+    "start": "node packages/server",
+    "start:watch": "nodemon -r dotenv/config packages/server",
+    "dev": "$npm_execpath run build; concurrently -k yarn:build:watch yarn:start:watch"
   },
   "devDependencies": {
+    "concurrently": "^5.3.0",
     "dotenv": "^8.2.0",
+    "nodemon": "^2.0.7",
     "lerna": "^3.22.1",
     "prettier": "^2.2.1"
   }

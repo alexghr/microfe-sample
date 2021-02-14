@@ -2,7 +2,7 @@ import React from "react";
 import { renderToString } from "react-dom/server";
 import { ServerStyleSheet } from "styled-components";
 import { StaticRouter } from "react-router-dom";
-import { ConfigContext } from "@alexghr/mfe-common";
+import { ConfigContext } from "@alexghr/mfe-app-common";
 import App from "../app";
 import template from "./template";
 

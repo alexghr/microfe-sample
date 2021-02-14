@@ -1,8 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import {
-  mediaQuery,
-} from "@alexghr/mfe-common";
+import { mediaQuery } from "@alexghr/mfe-app-common";
 import { ArticleModel } from "../models/article";
 
 const Article: React.FC<ArticleModel> = ({

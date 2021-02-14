@@ -1,5 +1,5 @@
 {
-  "name": "@alexghr/mfe-dashboard",
+  "name": "@alexghr/mfe-app-dashboard",
   "version": "0.1.0",
   "main": "./out",
   "scripts": {
@@ -8,7 +8,7 @@
     "postclean": "rm -rf ./out"
   },
   "dependencies": {
-    "@alexghr/mfe-common": "*",
+    "@alexghr/mfe-app-common": "*",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-is": "^17.0.1",
