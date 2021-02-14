@@ -6,12 +6,21 @@ import { ConfigContext } from "@alexghr/mfe-app-common";
 import App from "../app";
 import template from "./template";
 
-export function render(env: Record<string, any>) {
+type RenderProps = {
+  env: Record<string, any>;
+  url: URL
+}
+
+export function render({ env, url }: RenderProps) {
   const stylesheet = new ServerStyleSheet();
   const body = renderToString(
     stylesheet.collectStyles(
       <>
-        <StaticRouter>
+        <StaticRouter location={{
+          pathname: url.pathname,
+          search: url.search,
+          hash: url.hash
+        }}>
           <ConfigContext.Provider value={env}>
             <App />
           </ConfigContext.Provider>
@@ -21,7 +30,7 @@ export function render(env: Record<string, any>) {
   );
 
   return template({
-    app: "app.js",
+    app: "/app.js",
     body,
     style: stylesheet.getStyleTags(),
     env,
