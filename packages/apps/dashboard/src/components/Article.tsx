@@ -8,12 +8,14 @@ const Article: React.FC<ArticleModel> = ({
   urlToImage,
   title,
   description,
+  children
 }) => (
   <ExternalLink href={url} key={url}>
     <Element>
       <Img src={urlToImage} />
       <Title>{title}</Title>
       <Description>{description}</Description>
+      {children}
     </Element>
   </ExternalLink>
 );
@@ -26,7 +28,9 @@ const ExternalLink = styled.a`
   cursor: pointer;
 `;
 
-const Element = styled.article``;
+const Element = styled.article`
+  position: relative
+`;
 
 const Img = styled.img`
   width: 100%;

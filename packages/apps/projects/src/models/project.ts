@@ -6,8 +6,8 @@ export type Project = {
 };
 
 export enum ProjectItemType {
-  NOTE = "string",
-  ARTICLE = "project_article",
+  NOTE = "note",
+  ARTICLE = "article",
 }
 
 export type PinnedItem = {

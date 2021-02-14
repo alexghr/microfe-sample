@@ -8,9 +8,18 @@ import {
 } from "@alexghr/mfe-app-common";
 import useFeed from "../hooks/useFeed";
 import Article from "./Article";
+import { ArticleModel } from "../models/article";
 
 const TopHeadlines: React.FC = () => {
   const resp = useFeed();
+  const handlePin = (article: ArticleModel) => {
+    const id = JSON.stringify(article);
+    postMessage(JSON.stringify({
+      event: "projects:pin",
+    // we don't have a get-by-id API so simulate everything using serialisation
+      item: { id, type: 'article'}
+    }), origin);
+  }
 
   return (
     <Element>
@@ -18,7 +27,13 @@ const TopHeadlines: React.FC = () => {
       {resp.status === "success" && (
         <ArticlesGrid>
           {resp.body.articles.map((data) => (
-            <Article key={data.url} {...data} />
+            <Article key={data.url} {...data}>
+              <button onClick={(ev) => {
+                ev.preventDefault();
+                ev.stopPropagation();
+                handlePin(data)
+              }} title="pin to project">📌</button>
+            </Article>
           ))}
         </ArticlesGrid>
       )}
