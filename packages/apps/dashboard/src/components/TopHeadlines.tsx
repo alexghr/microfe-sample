@@ -7,6 +7,7 @@ import {
   Container,
 } from "@alexghr/mfe-common";
 import useFeed from "../hooks/useFeed";
+import Article from "./Article";
 
 const TopHeadlines: React.FC = () => {
   const resp = useFeed();
@@ -15,17 +16,9 @@ const TopHeadlines: React.FC = () => {
     <Element>
       {resp.status === "loading" && <LoadingIndicator />}
       {resp.status === "success" && (
-        <ArticleContainer>
-          {resp.body.articles.map(({ url, urlToImage, title, description }) => (
-            <ExternalLink href={url} key={url}>
-              <Article>
-                <Img src={urlToImage} />
-                <Title>{title}</Title>
-                <Description>{description}</Description>
-              </Article>
-            </ExternalLink>
-          ))}
-        </ArticleContainer>
+        <ArticlesGrid>
+          {resp.body.articles.map((data) =>  <Article key={data.url} {...data} />)}
+        </ArticlesGrid>
       )}
       {resp.status === "error" && (
         <>There was an error loading your news. Try refreshing this page</>
@@ -48,7 +41,7 @@ const Element = styled(Container)`
   }
 `;
 
-const ArticleContainer = styled.div`
+const ArticlesGrid = styled.div`
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-gap: ${spacing.large};
@@ -63,34 +56,3 @@ const ArticleContainer = styled.div`
     grid-gap: ${spacing.small};
   }
 `;
-
-const ExternalLink = styled.a`
-  color: black;
-  text-decoration: none;
-  cursor: pointer;
-`;
-
-const Article = styled.article``;
-
-const Img = styled.img`
-  width: 100%;
-  height: 200px;
-  object-fit: contain;
-  background-color: black;
-
-  @media ${mediaQuery.tablet} {
-    height: 150px;
-  }
-
-  @media ${mediaQuery.phone} {
-    height: 100px;
-  }
-`;
-
-const Title = styled.span`
-  display: block;
-  font-weight: bold;
-  text-decoration: underline;
-`;
-
-const Description = styled.p``;

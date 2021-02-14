@@ -1,17 +1,12 @@
 import { useContext } from "react";
 import { ConfigContext } from "@alexghr/mfe-common";
 import useFetch from "./useFetch";
+import { ArticleModel } from "../models/article";
 
 const BASE_URL = new URL("https://newsapi.org/");
 
 type Articles = {
-  articles: ReadonlyArray<{
-    author: string;
-    title: string;
-    description: string;
-    url: string;
-    urlToImage: string;
-  }>;
+  articles: ReadonlyArray<ArticleModel>;
 };
 
 type Error = {
