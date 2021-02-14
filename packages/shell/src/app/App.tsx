@@ -1,6 +1,6 @@
 import React from "react";
 import styled, { createGlobalStyle } from "styled-components";
-import { Route, Switch } from 'react-router';
+import { Route, Switch } from "react-router";
 import { spacing } from "./const";
 import DashboardRoutes from "@alexghr/mfe-app-dashboard";
 import ProjectRoutes from "@alexghr/mfe-app-projects";

@@ -22,10 +22,13 @@ export default async function createServer() {
   });
 
   server.use(serveStatic(staticDir));
-  server.use((ktx) => (ktx.body = render({
-    env: { NEWS_API_TOKEN },
-    url: ktx.URL
-  })));
+  server.use(
+    (ktx) =>
+      (ktx.body = render({
+        env: { NEWS_API_TOKEN },
+        url: ktx.URL,
+      }))
+  );
 
   return () => server.listen(PORT);
 }

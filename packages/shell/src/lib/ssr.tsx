@@ -8,19 +8,21 @@ import template from "./template";
 
 type RenderProps = {
   env: Record<string, any>;
-  url: URL
-}
+  url: URL;
+};
 
 export function render({ env, url }: RenderProps) {
   const stylesheet = new ServerStyleSheet();
   const body = renderToString(
     stylesheet.collectStyles(
       <>
-        <StaticRouter location={{
-          pathname: url.pathname,
-          search: url.search,
-          hash: url.hash
-        }}>
+        <StaticRouter
+          location={{
+            pathname: url.pathname,
+            search: url.search,
+            hash: url.hash,
+          }}
+        >
           <ConfigContext.Provider value={env}>
             <App />
           </ConfigContext.Provider>
