@@ -12,6 +12,9 @@
     },
     {
       "path": "../apps/dashboard"
+    },
+    {
+      "path": "../apps/projects"
     }
   ]
 }

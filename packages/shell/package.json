@@ -23,7 +23,8 @@
     "styled-components": "^5.2.1"
   },
   "optionalDependencies": {
-    "@alexghr/mfe-app-dashboard": "*"
+    "@alexghr/mfe-app-dashboard": "*",
+    "@alexghr/mfe-app-projects": "*"
   },
   "devDependencies": {
     "@alexghr/ts": "^0.1.0",
