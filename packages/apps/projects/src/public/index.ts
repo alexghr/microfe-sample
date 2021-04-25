@@ -1,3 +1,4 @@
 export * from "./ProjectsProvider";
 export * from "./ProjectsPanel";
-export * from "./ProjectRoutes";
+export * from "./ProjectsApp";
+export * from "./ProjectsPanel2";

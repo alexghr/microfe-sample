@@ -2,8 +2,8 @@ import React from "react";
 import { Switch, Route } from "react-router";
 import Dashboard from "../components/Dashboard";
 
-export const DashboardRoutes: React.FC = () => (
+export const DashboardApp: React.FC = () => (
   <Switch>
-    <Route path="/" component={Dashboard} />
+    <Route path="/" exact component={Dashboard} />
   </Switch>
 );

@@ -40,14 +40,18 @@ async function getProject(id: IDBValidKey): Promise<Project> {
 
 async function openProjectsDatabase(): Promise<IDBDatabase> {
   return new Promise((res, rej) => {
-    const req = indexedDB.open(PROJECTS_DB, 1);
-    req.onupgradeneeded = () => {
-      const db = req.result;
-      db.createObjectStore("projects", { keyPath: "id", autoIncrement: true });
-    };
+    try {
+      const req = indexedDB.open(PROJECTS_DB, 1);
+      req.onupgradeneeded = () => {
+        const db = req.result;
+        db.createObjectStore("projects", { keyPath: "id", autoIncrement: true });
+      };
 
-    req.onsuccess = () => res(req.result);
-    req.onerror = (err) => rej(err);
+      req.onsuccess = () => res(req.result);
+      req.onerror = (err) => rej(err);
+    } catch (err) {
+
+    }
   });
 }
 

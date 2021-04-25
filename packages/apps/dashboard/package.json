@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "@alexghr/mfe-app-common": "*",
+    "@alexghr/mfe-app-projects": "*",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-is": "^17.0.1",

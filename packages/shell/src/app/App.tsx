@@ -1,29 +1,21 @@
 import React from "react";
 import styled, { createGlobalStyle } from "styled-components";
-import { Route, Switch } from "react-router";
 import { spacing } from "./const";
-import { DashboardRoutes } from "@alexghr/mfe-app-dashboard";
-import {
-  ProjectRoutes,
-  ProjectsPanel,
-  ProjectsProvider,
-} from "@alexghr/mfe-app-projects";
+import { DashboardApp } from "@alexghr/mfe-app-dashboard";
+import { ProjectsApp } from "@alexghr/mfe-app-projects";
+import { Link } from "react-router-dom";
 
 const App: React.FC = () => {
   return (
     <>
       <GlobalStyles />
       <Element>
-        <ProjectsProvider>
-          <div>
-            <ProjectsPanel />
-          </div>
-          <Switch>
-            {/* place /projects first otherwise DashboardRoutes will render for everything */}
-            <Route path="/projects" component={ProjectRoutes} />
-            <Route path="/" component={DashboardRoutes} />
-          </Switch>
-        </ProjectsProvider>
+        <NavBar>
+          <Link to="/">Dashboard</Link>
+          <Link to="/project">Project</Link>
+        </NavBar>
+        <ProjectsApp />
+        <DashboardApp />
       </Element>
     </>
   );
@@ -37,9 +29,10 @@ const Element = styled.div`
   min-height: 100vh;
 `;
 
-const Main = styled.main`
-  flex-grow: 1;
-  height: 100%;
+const NavBar = styled.nav`
+  display: flex;
+  width: 100%;
+  height: 48px;
 `;
 
 const GlobalStyles = createGlobalStyle`
@@ -52,15 +45,5 @@ const GlobalStyles = createGlobalStyle`
     padding: 0;
     margin: 0;
     font-size: 16px;
-  }
-`;
-
-const Attribution = styled.p`
-  color: #666;
-  text-align: center;
-  margin-top: ${spacing.base};
-
-  & > a {
-    color: inherit;
   }
 `;
